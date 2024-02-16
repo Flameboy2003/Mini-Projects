@@ -1,0 +1,128 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden; 
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    left: -255px;
+    width: 250px;
+    height: 100%;
+    background: #C06E6F;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+}
+
+/* Sidebar header styles */
+.sidebar header {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    background: #543049;
+    user-select: none;
+    border-radius: 3px;
+}
+
+/* Sidebar links styles */
+.sidebar ul a {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
+    transition: padding-left 0.5s ease;
+}
+
+/* Hover effect on sidebar links */
+ul li:hover a {
+    padding-left: 30px;
+}
+
+/* Icon styles within sidebar links */
+.sidebar ul a i {
+    margin-right: 10px;
+    font-size: 24px; 
+}
+
+/* Checkbox styles for sidebar toggle */
+#check {
+    display: none;
+}
+
+/* Button styles for toggling sidebar */
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+}
+
+/* Menu button styles */
+label #btn {
+    left: 20px; 
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
+}
+
+/* Cancel button styles */
+label #cancel {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #C06E6F;
+    padding: 4px 9px;
+}
+
+/* Show sidebar when checkbox is checked */
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+/* Move menu button when sidebar is opened */
+#check:checked ~ label #btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Move cancel button when sidebar is opened */
+#check:checked ~ label #cancel {
+    left: 195px;
+}
+
+/* Adjust section margin when sidebar is opened */
+#check:checked ~ section {
+    margin-left: 250px;
+}
+
+/* Section styles */
+section {
+    background-image: url('images/img.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all 0.5s ease;
+}
